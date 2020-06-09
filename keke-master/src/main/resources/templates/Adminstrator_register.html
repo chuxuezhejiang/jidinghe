@@ -77,7 +77,7 @@
             	var time = new Date().getTime();
             	img.src = "imgGetCode?t=" + time;
             }
-            //普通用户注册
+            //管理员用户注册
             $(".login-btn").on("click",function(){
             	/*var sheng = $("#sheng").val();
             	var shi = $("#shi").val();
@@ -92,7 +92,7 @@
             	
             	$.ajax({
             		type: "post",
-            		url: "/api/register/index",
+            		url: "/api/Adminstratorregister/Adminstratorindex",
             		data:{
             			username:username,
             			cellphone:cellphone,
@@ -104,7 +104,7 @@
             			console.log("成功后返回的数据",data);
             			alert(data.msg);
             			if(data.sta==1){
-            				 location.href="http://localhost:8080/redirect?page=e-commerce_login"
+            				 location.href="http://localhost:8080/redirect?page=Adminstrator_login"
             				}
             		},
             		error: function(data){

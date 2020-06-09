@@ -245,76 +245,6 @@ public class MonitorUserExample {
             return (Criteria) this;
         }
 
-        public Criteria andHeadImgIsNull() {
-            addCriterion("head_img is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andHeadImgIsNotNull() {
-            addCriterion("head_img is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andHeadImgEqualTo(String value) {
-            addCriterion("head_img =", value, "headImg");
-            return (Criteria) this;
-        }
-
-        public Criteria andHeadImgNotEqualTo(String value) {
-            addCriterion("head_img <>", value, "headImg");
-            return (Criteria) this;
-        }
-
-        public Criteria andHeadImgGreaterThan(String value) {
-            addCriterion("head_img >", value, "headImg");
-            return (Criteria) this;
-        }
-
-        public Criteria andHeadImgGreaterThanOrEqualTo(String value) {
-            addCriterion("head_img >=", value, "headImg");
-            return (Criteria) this;
-        }
-
-        public Criteria andHeadImgLessThan(String value) {
-            addCriterion("head_img <", value, "headImg");
-            return (Criteria) this;
-        }
-
-        public Criteria andHeadImgLessThanOrEqualTo(String value) {
-            addCriterion("head_img <=", value, "headImg");
-            return (Criteria) this;
-        }
-
-        public Criteria andHeadImgLike(String value) {
-            addCriterion("head_img like", value, "headImg");
-            return (Criteria) this;
-        }
-
-        public Criteria andHeadImgNotLike(String value) {
-            addCriterion("head_img not like", value, "headImg");
-            return (Criteria) this;
-        }
-
-        public Criteria andHeadImgIn(List<String> values) {
-            addCriterion("head_img in", values, "headImg");
-            return (Criteria) this;
-        }
-
-        public Criteria andHeadImgNotIn(List<String> values) {
-            addCriterion("head_img not in", values, "headImg");
-            return (Criteria) this;
-        }
-
-        public Criteria andHeadImgBetween(String value1, String value2) {
-            addCriterion("head_img between", value1, value2, "headImg");
-            return (Criteria) this;
-        }
-
-        public Criteria andHeadImgNotBetween(String value1, String value2) {
-            addCriterion("head_img not between", value1, value2, "headImg");
-            return (Criteria) this;
-        }
-
         public Criteria andPasswordIsNull() {
             addCriterion("password is null");
             return (Criteria) this;
@@ -395,52 +325,62 @@ public class MonitorUserExample {
             return (Criteria) this;
         }
 
-        public Criteria andBornEqualTo(Date value) {
+        public Criteria andBornEqualTo(String value) {
             addCriterion("born =", value, "born");
             return (Criteria) this;
         }
 
-        public Criteria andBornNotEqualTo(Date value) {
+        public Criteria andBornNotEqualTo(String value) {
             addCriterion("born <>", value, "born");
             return (Criteria) this;
         }
 
-        public Criteria andBornGreaterThan(Date value) {
+        public Criteria andBornGreaterThan(String value) {
             addCriterion("born >", value, "born");
             return (Criteria) this;
         }
 
-        public Criteria andBornGreaterThanOrEqualTo(Date value) {
+        public Criteria andBornGreaterThanOrEqualTo(String value) {
             addCriterion("born >=", value, "born");
             return (Criteria) this;
         }
 
-        public Criteria andBornLessThan(Date value) {
+        public Criteria andBornLessThan(String value) {
             addCriterion("born <", value, "born");
             return (Criteria) this;
         }
 
-        public Criteria andBornLessThanOrEqualTo(Date value) {
+        public Criteria andBornLessThanOrEqualTo(String value) {
             addCriterion("born <=", value, "born");
             return (Criteria) this;
         }
 
-        public Criteria andBornIn(List<Date> values) {
+        public Criteria andBornLike(String value) {
+            addCriterion("born like", value, "born");
+            return (Criteria) this;
+        }
+
+        public Criteria andBornNotLike(String value) {
+            addCriterion("born not like", value, "born");
+            return (Criteria) this;
+        }
+
+        public Criteria andBornIn(List<String> values) {
             addCriterion("born in", values, "born");
             return (Criteria) this;
         }
 
-        public Criteria andBornNotIn(List<Date> values) {
+        public Criteria andBornNotIn(List<String> values) {
             addCriterion("born not in", values, "born");
             return (Criteria) this;
         }
 
-        public Criteria andBornBetween(Date value1, Date value2) {
+        public Criteria andBornBetween(String value1, String value2) {
             addCriterion("born between", value1, value2, "born");
             return (Criteria) this;
         }
 
-        public Criteria andBornNotBetween(Date value1, Date value2) {
+        public Criteria andBornNotBetween(String value1, String value2) {
             addCriterion("born not between", value1, value2, "born");
             return (Criteria) this;
         }
@@ -645,52 +585,62 @@ public class MonitorUserExample {
             return (Criteria) this;
         }
 
-        public Criteria andGenderEqualTo(Integer value) {
+        public Criteria andGenderEqualTo(String value) {
             addCriterion("gender =", value, "gender");
             return (Criteria) this;
         }
 
-        public Criteria andGenderNotEqualTo(Integer value) {
+        public Criteria andGenderNotEqualTo(String value) {
             addCriterion("gender <>", value, "gender");
             return (Criteria) this;
         }
 
-        public Criteria andGenderGreaterThan(Integer value) {
+        public Criteria andGenderGreaterThan(String value) {
             addCriterion("gender >", value, "gender");
             return (Criteria) this;
         }
 
-        public Criteria andGenderGreaterThanOrEqualTo(Integer value) {
+        public Criteria andGenderGreaterThanOrEqualTo(String value) {
             addCriterion("gender >=", value, "gender");
             return (Criteria) this;
         }
 
-        public Criteria andGenderLessThan(Integer value) {
+        public Criteria andGenderLessThan(String value) {
             addCriterion("gender <", value, "gender");
             return (Criteria) this;
         }
 
-        public Criteria andGenderLessThanOrEqualTo(Integer value) {
+        public Criteria andGenderLessThanOrEqualTo(String value) {
             addCriterion("gender <=", value, "gender");
             return (Criteria) this;
         }
 
-        public Criteria andGenderIn(List<Integer> values) {
+        public Criteria andGenderLike(String value) {
+            addCriterion("gender like", value, "gender");
+            return (Criteria) this;
+        }
+
+        public Criteria andGenderNotLike(String value) {
+            addCriterion("gender not like", value, "gender");
+            return (Criteria) this;
+        }
+
+        public Criteria andGenderIn(List<String> values) {
             addCriterion("gender in", values, "gender");
             return (Criteria) this;
         }
 
-        public Criteria andGenderNotIn(List<Integer> values) {
+        public Criteria andGenderNotIn(List<String> values) {
             addCriterion("gender not in", values, "gender");
             return (Criteria) this;
         }
 
-        public Criteria andGenderBetween(Integer value1, Integer value2) {
+        public Criteria andGenderBetween(String value1, String value2) {
             addCriterion("gender between", value1, value2, "gender");
             return (Criteria) this;
         }
 
-        public Criteria andGenderNotBetween(Integer value1, Integer value2) {
+        public Criteria andGenderNotBetween(String value1, String value2) {
             addCriterion("gender not between", value1, value2, "gender");
             return (Criteria) this;
         }

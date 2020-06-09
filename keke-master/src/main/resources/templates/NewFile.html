@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="/api/user/saveUserImg" method="post" enctype ="multipart/form-data">
+    <label for="file" class="btn btn-primary" style="float: left;height: 30px;width: 180px;margin-right: 20px">选择照片</label>
+    <input  id="file" name="file" type="file" style="float: left;display:none"/>
+    <input  name="id" type="hidden" value="用户id"/>
+    <input  class="btn btn-primary" type="submit" value="提交" style="float: left">
+</form>
+
+</body>
+</html>

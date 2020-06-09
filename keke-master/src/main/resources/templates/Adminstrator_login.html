@@ -72,7 +72,7 @@
     	var password = $(".password").val();
     	var code = $(".code").val();
     	$.ajax({
-    		url : "/api/register2/login",
+    		url : "/api/Adminstratorregister2/Adminstratorlogin",
     		type : "post",
     		data : {
     			cellphone : cellphone,
@@ -86,9 +86,9 @@
     			if (data.code == 1) {
     				/*     localStorage.setItem("id","username");
     				     localStorage.setItem("id");*/
-    				location.href = "http://localhost:8080/redirect?page=service_setting"
-    				sessionStorage.setItem("id", data.RegisterUserid);
-    				sessionStorage.setItem("username", data.RegisterUsername);
+    				location.href = "http://localhost:8080/redirect?page=Adminstrator_setting"
+    				sessionStorage.setItem("id", data.Adminstratorid);
+    				sessionStorage.setItem("username", data.Adminstratorname);
     				sessionStorage.setItem("status", 1);
     			} else {
     				alert(data.msg);

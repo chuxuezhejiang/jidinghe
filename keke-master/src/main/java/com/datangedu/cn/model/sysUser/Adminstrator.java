@@ -7,11 +7,9 @@ public class Adminstrator {
 
     private String userName;
 
-    private String headImg;
-
     private String password;
 
-    private Date born;
+    private String born;
 
     private String cellphone;
 
@@ -19,7 +17,13 @@ public class Adminstrator {
 
     private Date registerTime;
 
-    private Integer gender;
+    private String gender;
+
+    private String regionId;
+
+    private String email;
+
+    private byte[] headImg;
 
     public String getId() {
         return id;
@@ -37,14 +41,6 @@ public class Adminstrator {
         this.userName = userName == null ? null : userName.trim();
     }
 
-    public String getHeadImg() {
-        return headImg;
-    }
-
-    public void setHeadImg(String headImg) {
-        this.headImg = headImg == null ? null : headImg.trim();
-    }
-
     public String getPassword() {
         return password;
     }
@@ -53,12 +49,12 @@ public class Adminstrator {
         this.password = password == null ? null : password.trim();
     }
 
-    public Date getBorn() {
+    public String getBorn() {
         return born;
     }
 
-    public void setBorn(Date born) {
-        this.born = born;
+    public void setBorn(String born) {
+        this.born = born == null ? null : born.trim();
     }
 
     public String getCellphone() {
@@ -85,11 +81,35 @@ public class Adminstrator {
         this.registerTime = registerTime;
     }
 
-    public Integer getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(Integer gender) {
-        this.gender = gender;
+    public void setGender(String gender) {
+        this.gender = gender == null ? null : gender.trim();
+    }
+
+    public String getRegionId() {
+        return regionId;
+    }
+
+    public void setRegionId(String regionId) {
+        this.regionId = regionId == null ? null : regionId.trim();
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email == null ? null : email.trim();
+    }
+
+    public byte[] getHeadImg() {
+        return headImg;
+    }
+
+    public void setHeadImg(byte[] headImg) {
+        this.headImg = headImg;
     }
 }

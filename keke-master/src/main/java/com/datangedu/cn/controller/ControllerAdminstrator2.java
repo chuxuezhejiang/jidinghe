@@ -14,20 +14,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.datang.hrb.util.MD5Util;
-import com.datangedu.cn.dao.mapper.RegisterUserMapper;
+import com.datangedu.cn.model.sysUser.Adminstrator;
 import com.datangedu.cn.model.sysUser.RegisterUser;
+import com.datangedu.cn.service.AdminstratorUserService;
 import com.datangedu.cn.service.RegisterUserService;
-
-//*********************************登录*************************************
 @Controller
-@RequestMapping("api/register2")
-public class ControllerRegister2 {
+@RequestMapping("api/Adminstratorregister2")
+public class ControllerAdminstrator2 {
+	//**************************登录********************************
 	@Resource
-	RegisterUserService registerUserService;
+	AdminstratorUserService adminstratorUserService;
 	@ResponseBody
-	@RequestMapping(value="/login",method=RequestMethod.POST)
-	public Map<String,Object> registerUserLogin(HttpServletRequest request) {
-		RegisterUser registerUser=new RegisterUser();
+	@RequestMapping(value="/Adminstratorlogin",method=RequestMethod.POST)
+	public Map<String,Object> adminstratorUserLogin(HttpServletRequest request) {
+		Adminstrator adminstrator=new Adminstrator();
 		System.out.println("获取登录信息");
 		Map<String,Object> map=new HashMap<String,Object>();
 		String cellphone=request.getParameter("cellphone");
@@ -60,33 +60,33 @@ public class ControllerRegister2 {
 		   return map;
 		  }
 		
-		List<RegisterUser> RegisterUserInfo=registerUserService.getcellphone(request.getParameter("cellphone"));
-		System.out.println(RegisterUserInfo);
+		List<Adminstrator> AdminstratorInfo=adminstratorUserService.getcellphone(request.getParameter("cellphone"));
+		System.out.println(AdminstratorInfo);
 		
-		if(RegisterUserInfo.isEmpty()) {
+		if(AdminstratorInfo.isEmpty()) {
 			map.put("msg","帐号不存在");
 			return map;
-		}else if(!RegisterUserInfo.get(0).getPassword().equals(MD5Util.getMD5(request.getParameter("password").getBytes()))) {
+		}else if(!AdminstratorInfo.get(0).getPassword().equals(MD5Util.getMD5(request.getParameter("password").getBytes()))) {
 			map.put("msg","密码错误" );
 			return map;
 		}
 		else {
-			registerUser.setStatus(1);
-			int a=registerUserService.updatestatus(registerUser,request);
+			adminstrator.setStatus(1);
+			int a=adminstratorUserService.updatestatus(adminstrator,request);
 			map.put("code", 1);
 			map.put("msg","恭喜登录成功");	
 		}
-		map.put("RegisterUserid",RegisterUserInfo.get(0).getId());
-		map.put("RegisterUsername",RegisterUserInfo.get(0).getUserName());
+		map.put("Adminstratorid",AdminstratorInfo.get(0).getId());
+		map.put("Adminstratorname",AdminstratorInfo.get(0).getUserName());
 		map.put("status", 1);
 		return map;
 	}
 	//****************************用户找回密码***************************
 		@ResponseBody
-		@RequestMapping(value = "/findpassword",method = RequestMethod.POST)
+		@RequestMapping(value = "/Adminstratorfindpassword",method = RequestMethod.POST)
 		public Map <String,Object> findPassword(HttpServletRequest request) {
 			Map<String,Object> map = new HashMap<String,Object>();
-			RegisterUser registerUser=new RegisterUser();
+			Adminstrator adminstrator=new Adminstrator();
 			
 			if(request.getParameter("cellphone").isEmpty()) {
 				map.put("msg","输入手机号" );
@@ -117,8 +117,8 @@ public class ControllerRegister2 {
 				map.put("msg","两次密码不一致");
 				return map;
 			}
-			registerUser.setPassword(MD5Util.getMD5(request.getParameter("password1").getBytes()));
-			int a=registerUserService.updatepassword(registerUser, request);
+			adminstrator.setPassword(MD5Util.getMD5(request.getParameter("password1").getBytes()));
+			int a=adminstratorUserService.updatepassword(adminstrator, request);
 			System.out.println("修改密码5"+a);
 			map.put("stu", a);
 			if(a==1) {

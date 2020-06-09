@@ -1,8 +1,6 @@
 package com.datangedu.cn.controller;
 
 import java.util.HashMap;
-
-
 import java.util.List;
 import java.util.Map;
 
@@ -15,19 +13,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.datangedu.cn.model.sysUser.Adminstrator;
 import com.datangedu.cn.model.sysUser.RegisterUser;
+import com.datangedu.cn.service.AdminstratorUserService;
 import com.datangedu.cn.service.RegisterUserService;
-
-
 @Controller
-@RequestMapping("api/register")
-public class ControllerRegister {
+@RequestMapping("api/Adminstratorregister")
+public class ControllerAdminstrator {
 	@Resource
-	RegisterUserService registerUserServer;
+	AdminstratorUserService adminstratorUserService;
 	
 	//****************************注册***********************************************
 	@ResponseBody		
-	@RequestMapping(value="/index",method = RequestMethod.POST)
+	@RequestMapping(value="/Adminstratorindex",method = RequestMethod.POST)
 	public Map<String,Object> register(HttpServletRequest request) {
 		Map<String,Object> map = new HashMap<String,Object>();
 		if(request.getParameter("username").isEmpty()) {
@@ -57,12 +55,12 @@ public class ControllerRegister {
 			return map;
 		}
 		
-		List<RegisterUser> RegisterUser=registerUserServer.getcellphone(request.getParameter("cellphone"));
-		if(!RegisterUser.isEmpty()) {
+		List<Adminstrator> Adminstrator=adminstratorUserService.getcellphone(request.getParameter("cellphone"));
+		if(!Adminstrator.isEmpty()) {
 			map.put("msg","手机号已存在" );
 			return map;
 		}
-		int a = registerUserServer.register(request);		
+		int a = adminstratorUserService.register(request);		
 		System.out.println("插入成功"+a);
 		map.put("msg", "注册成功");
 		map.put("sta", 1);
